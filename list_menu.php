@@ -23,19 +23,26 @@ if (isset($_GET["id_kategori"])) {
 }
 ?>
 
+<div class='container'>
+
 <h2>Daftar Menu <?php echo $kategori_nama; ?></h2>
 <ul>
     <?php
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            echo "<li><a href='detail_menu.php?id_menu=" . $row["id"] . "'>" . $row["nama_menu"] . "</a></li>";
+            echo "<div class='container'>";
+            echo "<li>";
+            echo "<img src='" . $row["gambar"] . "' alt='" . $row["nama_menu"] . "' width='150'>";
+            echo "<br><a href='detail_menu.php?id_menu=" . $row["id"] . "'>" . $row["nama_menu"] . "</a>";
+            echo "</li>";   
+            echo "</div>";     
         }
     } else {
         echo "<li>Menu belum tersedia.</li>";
     }
     ?>
 </ul>
-
+</div>
 <?php
 $stmt->close();
 $conn->close();

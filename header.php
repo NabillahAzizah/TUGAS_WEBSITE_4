@@ -6,9 +6,11 @@ session_start();
 <html>
 <head>
     <title>My Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <style>
         .nav {
-            background-color: #f2f2f2;
+            background-color: #9DC183;
             padding: 15px;
         }
         .nav a {
@@ -27,7 +29,7 @@ session_start();
             list-style-type: none;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2; 
+            background-color: #9DC183; 
             border: 1px solid #ccc;
             z-index: 1; 
             width: 200px;
@@ -41,7 +43,6 @@ session_start();
             padding: 10px 15px;
         }
         .nav ul li:hover {
-            background-color: #e2e2e2;
             padding: 5px;
         }
     </style>
@@ -61,6 +62,7 @@ session_start();
                 </li>
             </ul>
         </div>
+        
         <?php
         if (isset($_SESSION['username'])) {
             echo '<a href="logout.php">Logout</a>';
