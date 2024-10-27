@@ -20,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql->bind_param("ss", $username, $password);
     
         if ($sql->execute()) {
-            $error_message = "<div class='succes-message'>Pendaftaran berhasil! Silakan login.</div>";
-
-        } else {
+                header("Location: login.php");
+                exit();
+            } else {
             echo "Error: " . $sql->error;
         }
 
